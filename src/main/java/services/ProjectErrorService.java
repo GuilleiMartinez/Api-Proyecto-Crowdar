@@ -1,7 +1,7 @@
 package services;
 
 import api.model.ErrorResponse;
-import api.model.project.ProjectResponse;
+
 import com.crowdar.api.rest.Response;
 import com.crowdar.core.PropertyManager;
 
@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class ProjectErrorService extends BaseService {
 
-    public static Response post(String jsonName) {
+    /*public static Response post(String jsonName) {
         return post(jsonName, ErrorResponse.class,setParams());
     }
 
@@ -21,5 +21,5 @@ public class ProjectErrorService extends BaseService {
         params.put("name",NAME.get());
         params.put("id-work",ID_WORKSPACE.get());
         return params;
-    }
+    }*/
 }

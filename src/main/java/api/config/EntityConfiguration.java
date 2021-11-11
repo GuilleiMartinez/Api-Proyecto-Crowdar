@@ -35,10 +35,10 @@ public enum EntityConfiguration {
             return WorkspaceErrorService.class;
         }
     },
-    PROJECT {
+    TIMEENTRIES {
         @Override
         public Class<?> getEntityService() {
-            return ProjectService.class;
+            return TimeEntriesGuilleService.class;
         }
     },
     PROJECT_MODIFICAR {

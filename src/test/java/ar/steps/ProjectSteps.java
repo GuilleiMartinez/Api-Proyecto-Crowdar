@@ -1,13 +1,11 @@
 package ar.steps;
 
-import api.model.project.ProjectResponse;
-import ar.validator.ProjectValidator;
-import com.crowdar.api.rest.APIManager;
+
+import ar.validator.TimeEntriesValidator;
 import com.crowdar.core.PageSteps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import services.BaseService;
-import services.ProjectModificarService;
 
 public class ProjectSteps extends PageSteps {
 
@@ -18,7 +16,7 @@ public class ProjectSteps extends PageSteps {
 
     @Then("^Obtengo los datos de mi Proyecto (.*)$")
     public void obtengoLosDatosDeMiProyectoName(String name) {
-        ProjectValidator.validate(name);
+        TimeEntriesValidator.validarlistadeIdNoNull();
     }
 
     @And("un id workspace valido")
@@ -26,9 +24,9 @@ public class ProjectSteps extends PageSteps {
         BaseService.ID_WORKSPACE.set("616dc9e0747e1a1f68147c87");
     }
 
-    @And("guardo el id del proyecto")
-    public void guardoElIdDelProyecto() {
-        ProjectResponse response = (ProjectResponse) APIManager.getLastResponse().getResponse();
+    //@And("guardo el id del proyecto")
+    /*public void guardoElIdDelProyecto() {
+        TimeEntriesResponse response = (TimeEntriesResponse) APIManager.getLastResponse().getResponse();
         ProjectModificarService.ID_P.set(response.getId());
-    }
+    }*/
 }
